@@ -44,7 +44,8 @@ public class AsteroidService {
                                 if (approach.getString("orbiting_body").equals("Earth")) {
                                     String kmStr = approach.getJSONObject("miss_distance").getString("kilometers");
                                     double distance = Double.parseDouble(kmStr);
-                                    asteroidList.add(new Asteroid(name, magnitude, distance));
+                                    String id = asteroidObj.getString("id");
+                                    asteroidList.add(new Asteroid(id, name, magnitude, distance));
                                     break;
                                 }
                             }
