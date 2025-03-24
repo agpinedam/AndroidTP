@@ -12,7 +12,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.asteroid.model.Asteroid;
-import com.example.asteroid.service.AsteroidAdapter;
+import com.example.asteroid.adapter.AsteroidAdapter;
 import com.example.asteroid.R;
 
 import org.json.JSONArray;

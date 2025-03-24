@@ -1,4 +1,4 @@
-package com.example.asteroid.service;
+package com.example.asteroid.adapter;
 
 
 import android.view.LayoutInflater;
