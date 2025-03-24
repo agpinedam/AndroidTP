@@ -1,10 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailLayout"
     android:orientation="vertical"
     android:background="#222222"
-    android:padding="24dp"
     android:gravity="center_horizontal"
+    android:padding="24dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activity.AsteroidDetailActivity">
 
     <TextView
         android:id="@+id/nameText"
@@ -33,5 +37,11 @@
         android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <com.example.asteroid.view.AsteroidOrbitView
+        android:id="@+id/orbitView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="24dp" />
 
 </LinearLayout>
