@@ -21,7 +21,7 @@ public class AsteroidDetailActivity extends AppCompatActivity {
     private TextView nameText, infoText, periodText;
     private AsteroidOrbitView orbitView;
 
-    private final String API_KEY = "DEMO_KEY"; // ⚠️ Reemplazá si tenés tu propia API key
+    private final String API_KEY = "DEMO_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,13 +62,14 @@ public class AsteroidDetailActivity extends AppCompatActivity {
                         JSONObject orbitalData = json.getJSONObject("orbital_data");
                         String orbitalPeriod = orbitalData.getString("orbital_period");
 
-                        // Mostrar datos
                         nameText.setText(name);
                         infoText.setText("Magnitude : " + magnitude + "     Distance : " + (int) distance);
-                        periodText.setText("Période orbitale : " + orbitalPeriod);
+                        int periodInt = Math.round(Float.parseFloat(orbitalPeriod));
+                        periodText.setText("Période orbitale : " + periodInt);
+                        orbitView.setAsteroidPeriod(periodInt);
 
-                        // Actualizar gráfico con distancia orbital
                         orbitView.setAsteroidDistance((float) distance);
+                        orbitView.setAsteroidPeriod(Float.parseFloat(orbitalPeriod));
 
                     } catch (JSONException e) {
                         nameText.setText("Erreur lors du traitement des données");
